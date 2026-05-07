@@ -5,6 +5,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y && \
     apt-get install -y apache2 php libapache2-mod-php
 
+RUN rm -f /var/www/html/index.html
+
 COPY . /var/www/html/
 
 EXPOSE 80
